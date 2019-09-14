@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import wget
 
-for i in range(1, 2169):
+for i in range(1, 2202):
     i = i + 1
     permanent = i
     temp = str(i)
@@ -11,7 +11,7 @@ for i in range(1, 2169):
     r = requests.get(url)
     temp_r = str(r)
 
-    if temp_r != "200":
+    if temp_r = "200":
         print("> Status code is good...")
     else:
         print("> Houston, we have a problem!")
@@ -51,5 +51,5 @@ for i in range(1, 2169):
     print("\n> Image number " + temp + " is downloaded...")
     print(" ")
 
-print(">>>EVERY DAMN THING IS DOWNLOADED!!<<<")
-print("**BE HAPPY**")
+print(">>> EVERY DAMN THING IS DOWNLOADED <<<")
+print("** BE HAPPY **")
