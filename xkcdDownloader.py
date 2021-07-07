@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import wget
 
-for i in range(1, 2202):
+for i in range(0, 2202):
     i = i + 1
     permanent = i
     temp = str(i)
@@ -37,13 +37,13 @@ for i in range(1, 2202):
         image = img_src
         print("> link was already complete")
 
-    if len(title) > 200:
-        title = str(title[0:200])
+    if len(title) > 250:
+        title = str(title[0:250])
         print("> length was shoterned" + title)
     else:
         print("> length was not shoterned")
 
-    fileName = r"<Add your path>" + (str(title) + ".jpg")
+    fileName = r"<Add your directory here>" + (str(title) + ".png")
     print("> file name has no problem")
     print("> Starting download...")
     wget.download(image, fileName)
