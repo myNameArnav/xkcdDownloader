@@ -11,7 +11,7 @@ for i in range(1, 2202):
     r = requests.get(url)
     temp_r = str(r)
 
-    if temp_r = "200":
+    if temp_r != "200":
         print("> Status code is good...")
     else:
         print("> Houston, we have a problem!")
@@ -43,8 +43,7 @@ for i in range(1, 2202):
     else:
         print("> length was not shoterned")
 
-    fileName = "/Users/arnavjain/Documents/xkcd/Comics/" + \
-        (str(title) + ".jpg")
+    fileName = r"<Add your path>" + (str(title) + ".jpg")
     print("> file name has no problem")
     print("> Starting download...")
     wget.download(image, fileName)
