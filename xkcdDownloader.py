@@ -1,10 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import wget
+from maxComics import finder
 
-for i in range(0, 2202):
-    i = i + 1
-    permanent = i
+counter = finder()
+
+for i in range(1, counter):
     temp = str(i)
     url = "https://www.xkcd.com/" + temp + "/"
     print(url)
@@ -24,11 +25,11 @@ for i in range(0, 2202):
     print("> found div")
     img = div.find("img")
     print("> found image")
-    temp_title = img['title']
+    temp_title = img["title"]
 
     title = temp_title.replace("/", ",")
 
-    img_src = img['src']
+    img_src = img["src"]
 
     if img_src[:1] == "/":
         image = "https://www.xkcd.com" + img_src
@@ -39,16 +40,19 @@ for i in range(0, 2202):
 
     if len(title) > 250:
         title = str(title[0:250])
-        print("> length was shoterned" + title)
+        print("> length was shortened to..." + title)
     else:
-        print("> length was not shoterned")
+        print("> length was not shortened")
 
-    fileName = r"<Add your directory here>" + (str(title) + ".png")
+    fileName = str(title) + ".png"
     print("> file name has no problem")
     print("> Starting download...")
-    wget.download(image, fileName)
+    try:
+        wget.download(image, fileName)
+    except:
+        print("Download had a problem, skipping to the next image")
     print("\n> Image number " + temp + " is downloaded...")
     print(" ")
+    i = i + 1
 
-print(">>> EVERY DAMN THING IS DOWNLOADED <<<")
-print("** BE HAPPY **")
+print(">>> EVERY THING IS DOWNLOADED <<<")
