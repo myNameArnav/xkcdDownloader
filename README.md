@@ -9,4 +9,4 @@ It finds the latest comic and downloads every comic.
 To run
 
 - ``` pip install -r requirements.txt ```
-- ``` python3 xkcdDownloader.py ```
+- ``` python main.py ```
