@@ -56,6 +56,5 @@ def downloader():
             logger.info("Download had a problem, skipping to the next image")
         logger.info("\n> Image number " + temp + " is downloaded...")
         logger.info(" ")
-        i = i + 1
 
     print(">>> EVERY THING IS DOWNLOADED <<<")
