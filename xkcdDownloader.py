@@ -12,7 +12,7 @@ def getMaxComicNumber():
     return res["num"]
 
 
-def download_image(i, url, logger):
+def downloadImage(i, url, logger):
     try:
         response = requests.get(url)
         if response.status_code != 200:
@@ -64,7 +64,7 @@ def downloader():
     for i in range(1, counter + 1):
         url = f"https://www.xkcd.com/{i}/"
 
-        thread = Thread(target=download_image, args=(i, url, logger))
+        thread = Thread(target=downloadImage, args=(i, url, logger))
         threads.append(thread)
         thread.start()
 
