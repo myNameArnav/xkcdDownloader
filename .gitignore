@@ -1,3 +1,6 @@
 __pycache__
 *.png
-test.py
+test*.py
+*.json
+*.log
+comics
